@@ -1,6 +1,6 @@
 import React from "react";
-import "./component-styles/card.css";
-import "./component-styles/ticket.css";
+import "../styles/card.css";
+import "../styles/ticket.css";
 import LogoS7 from "../assets/img/S7 Logo.png";
 import LogoXi from "../assets/img/XiamenAir Logo.png";
 
