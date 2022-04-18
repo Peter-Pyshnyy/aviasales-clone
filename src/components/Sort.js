@@ -1,6 +1,5 @@
 import React from "react";
-import "./component-styles/sort.css";
-import { useEffect, useState } from "react/cjs/react.production.min";
+import "../styles/sort.css";
 
 const Sort = (props) => (
   <div className="SortMenu">

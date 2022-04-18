@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import "./component-styles/sort.css";
-import "./component-styles/loadMore.css";
-import { useEffect, useState } from "react/cjs/react.production.min";
-import TicketList from "./TicketList";
+import "../styles/sort.css";
+import "../styles/loadMore.css";
+import TicketList from "./TicketList/TicketList";
 
 class Sort extends Component {
   render() {
     return (
       <div className="SortMenu">
-        <div className="SortOption SortLeft Active" onClick={this.props.sort0}>
+        <div
+          className="SortOption SortLeft Active"
+          onClick={this.props.cheapSort}>
           <h3>Самый дешевый</h3>
         </div>
-        <div className="SortOption" onClick={this.props.sort1}>
+        <div className="SortOption" onClick={this.props.fastSort}>
           <h3>Самый быстрый</h3>
         </div>
-        <div className="SortOption SortRight" onClick={this.props.sort2}>
+        <div className="SortOption SortRight" onClick={this.props.optimalSort}>
           <h3>Оптимальный</h3>
         </div>
       </div>
@@ -35,32 +36,35 @@ class LoadMore extends Component {
 export default class Flights extends Component {
   constructor(props) {
     super(props);
-    this.state = { sortStyle: 0 };
-    this.sort0 = this.sort0;
-    this.sort1 = this.sort1;
-    this.sort2 = this.sort2;
+    this.cheapSort = this.cheapSort;
+    this.fastSort = this.fastSort;
+    this.optimalSort = this.optimalSort;
     this.flightListElement = React.createRef();
   }
-  sort0 = () => {
+
+  state = { sortStyle: 0 };
+
+  cheapSort = () => {
     this.setState({ sortStyle: 0 });
     this.flightListElement.current.changeSortType(0);
-    console.log(this.state.sortStyle);
   };
-  sort1 = () => {
+  fastSort = () => {
     this.setState({ sortStyle: 1 });
     this.flightListElement.current.changeSortType(1);
-    console.log(this.state.sortStyle);
   };
-  sort2 = () => {
+  optimalSort = () => {
     this.setState({ sortStyle: 2 });
     this.flightListElement.current.changeSortType(2);
-    console.log(this.state.sortStyle);
   };
 
   render() {
     return (
       <div>
-        <Sort sort0={this.sort0} sort1={this.sort1} sort2={this.sort2} />
+        <Sort
+          cheapSort={this.cheapSort}
+          fastSort={this.fastSort}
+          optimalSort={this.optimalSort}
+        />
         <TicketList ref={this.flightListElement} />
         <LoadMore />
       </div>

@@ -1,30 +1,20 @@
 import React from "react";
-import "./component-styles/card.css";
-
-const RadioButton = ({ label, value, onChange }) => {
-  return (
-    <div className="RBWrapp">
-      <label className="RadioboxControll">
-        <input type="radio" checked={value} onChange={onChange} />
-        {label}
-      </label>
-    </div>
-  );
-};
+import "../styles/card.css";
+import RadioButton from "./primitive/RadioButton";
 
 const Airlines = () => {
-  const [favorite, setAirline] = React.useState("Все");
+  const [favorite, setFavorite] = React.useState("Все");
 
   const handleAllChange = () => {
-    setAirline("Все");
+    setFavorite("Все");
   };
 
   const handleS7Change = () => {
-    setAirline("S7  Airlines");
+    setFavorite("S7  Airlines");
   };
 
   const handleXiChange = () => {
-    setAirline("XiamenAir");
+    setFavorite("XiamenAir");
   };
 
   return (

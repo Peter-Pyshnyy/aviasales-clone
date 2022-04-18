@@ -1,6 +1,6 @@
 import React from "react";
-import "./component-styles/card.css";
-import "./component-styles/checkbox.css";
+import "../styles/card.css";
+import "../styles/checkbox.css";
 
 const Stops = () => {
   const [checkedOne, setCheckedOne] = React.useState(false);

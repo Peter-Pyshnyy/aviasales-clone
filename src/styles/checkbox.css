@@ -39,7 +39,7 @@ input[type="checkbox"]:checked {
 
 input[type="checkbox"]:checked:after {
   /* Heres your symbol replacement - this is a tick in Unicode. */
-  content: url("../../assets/img/Shape.svg");
+  content: url("../assets/img/Shape.svg");
   color: #2196f3;
   /* The following positions my tick in the center, 
    * but you could just overlay the entire box
